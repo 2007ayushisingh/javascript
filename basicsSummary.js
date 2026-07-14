@@ -21,3 +21,32 @@ console.log(ID==ID2); //false because symbol is unique and cannot be compared wi
 console.log(ID===ID2); //false because symbol is unique and cannot be compared with another symbol even if they have the same value. 
 console.log(typeof ID); //symbol
 console.log(typeof ID2); //symbol
+
+
+//Array 
+const heros=["shaktiman",'Nagraj',"doga"];
+console.log(heros);
+
+//Objects
+let myObj={
+    name:"Rudra",
+    age:19,
+    isLoggedIn:true
+}
+console.log(myObj);
+console.log(typeof myObj);
+
+
+//Function Declaration
+const myFunc=function(){
+    console.log("Radhe Radhe");
+}
+myFunc();
+console.log(typeof myFunc);
+
+//****************************Interview Question *************************/
+console.log(typeof null); //object
+console.log(typeof object); //object
+console.log(typeof undefined); //undefined
+console.log(typeof boolean); //boolean
+console.log(typeof String); //String
