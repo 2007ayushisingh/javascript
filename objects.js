@@ -64,55 +64,24 @@ console.log(IsUser.name);  //no changes will make cuzz we already freezed the ob
 console.log(user2);
 console.log(IsUser);
 
-/****** In js functions are treated as variables, no discimination*******/
-user2.greetings=function(){
-    console.log(`hey ${user2.name} , How are you my pookie?`);
+// /****** In js functions are treated as variables, no discimination*******/
+// function greeting(){
+//  console.log(`hey ${user2.name} , How are you my pookie?`);
+// }
+// console.log(user2.greetings);  //********************anonymous function    output--undefined*********************************************
+// user2.greetings(); 
+
+const newUser = new Object()  // singleton object    empty object
+const User ={     //non singleton
+ name:"Ayushi" ,
+ isLoggedin:true,
 };
-console.log(user2.greetings);  //********************anonymous function    output--undefined*********************************************
-user2.greetings(); 
 
-// IsUser.Greetings=function()
-// {
-//     console.log(`i am great and miusiing you so much. ypurs ${IsUser.name}`);
-// };
-// IsUser.Greeting();
-// user2.greetings=function()   // function calling
-// {
-//     console.log(`hey ${user2} , How are you my pookie?`);
-// };
-// user2.greetings();
-// ...existing code...
+//###################################  COMBINE OBJECTS  ##################################//
+const obj1={1:"a", 2:"b"};
+const obj2={3:"c", 4:"d"};
+const obj3={obj1, obj2}        //wrong syntax ....because there will be object within object
+const obj4 = Object.assign({}, obj1, obj2);   //correct syntax
+console.log(obj4);
+//console.log(...obj1, ...obj2);          //SPREAD OPERATOR TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
 
-
-// // define methods BEFORE freezing objects
-// user2.greetings = function() {
-//     console.log(`hey ${user2.name}, How are you my pookie?`);
-// };
-// console.log(user2.greetings); // function object
-// user2.greetings();            // invoke
-
-// IsUser.greetings = function() {
-//     console.log(`i am great and missing you so much. yours ${IsUser.name}`);
-// };
-// IsUser.greetings();
-
-// // demonstrate reassignment (works because not frozen yet)
-// user2.greetings = function() {
-//     console.log(`hey ${user2.name} again!`);
-// };
-// user2.greetings();
-
-// // now freeze if desired
-// Object.freeze(user2);
-// Object.freeze(IsUser);
-
-// // attempts to mutate after freeze will not change the objects
-// user2.name = "Vaibhav";
-// IsUser.name = "Prachi";
-// console.log(user2.name); // original value
-// console.log(IsUser.name); // original value
-
-// console.log(user2);
-// console.log(IsUser);
-
-// // ...existing code...
