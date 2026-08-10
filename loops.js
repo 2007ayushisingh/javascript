@@ -40,6 +40,7 @@ const bca=["Ayushi", "Rudra","Prachi", "Jaya" ]
 // continue  and ignore that specific condition 
 for (let ind= 0; ind<arr_student.length ; ind++){
      let cadets=arr_student[ind];
+     // skip the condition true ......
      if(cadets==="Ayushi")
         {
         continue;
