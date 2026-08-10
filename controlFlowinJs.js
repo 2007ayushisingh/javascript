@@ -40,3 +40,6 @@ console.log(`your current balance is ${balance}`);
     console.log(`please login and check your credit card details.`)
     console.log(" Thank you.");
  }
+
+ // &&   =>  and operator
+ // ||   => Or operator
