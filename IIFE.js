@@ -31,4 +31,10 @@ console.log(result); // 15
 //NAMED IIFE
 (function code(){
     console.log(`Named IIFE`);
-})() //  type error if you wont use semicolon after the function body because it will be treated as a function declaration and not an expression.
+})(); 
+
+// UNNAMED OR SIMPLE IIFE
+((name)=>{
+    console.log(`Unnamed IIFE with Arrow Function and parameter: ${name}`);
+})("Ayushi");
+//Note--->  if you are using two IIFE in a single file then you must use semicolon after the first IIFE otherwise it will throw an error because it will be treated as a function declaration and not an expression.
