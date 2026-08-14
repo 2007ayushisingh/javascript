@@ -40,14 +40,14 @@ console.log(userBooks);       //  output ------[] EXPLICIT
 console.log("here we are printing ALL BOOKS...")
 myBooks.forEach((item) => {
     // console.log(item.bookName);
-    //  console.log(item.author);
-    console.log(item); 
-    return item;               // undefined 
+    // console.log(item.author);
+    console.log(item);
+    return item; // undefined
 });
-//console.log(values);
+// console.log(values);
 
-// USING FILTER  ----------- also we can write it like this..........
-// syntex-----------  arrayname.filter((variable) => (condition))
+// USING FILTER ----------- also we can write it like this..........
+// syntax ----------- arrayName.filter((variable) => condition)
 
 /* Summary in Few Words:
 Filter = Remove unwanted items from array based on condition
@@ -55,14 +55,14 @@ Returns new array (doesn't change original)
 Syntax: array.filter((item) => item > value)
 Works with numbers, strings, objects, etc.
 */
-// note----------  object ki properties access krne k liye variable.propery likhenge
- console.log("here we are printing FAVOURITE BOOKS...")
+// note---------- object ki properties access krne k liye variable.property likhenge
+console.log("here we are printing FAVOURITE BOOKS...")
 // FILTER - Get books by specific author
 const fav = myBooks.filter((book) => book.author === "Dharmveer bharti");
-console.log(fav);   // OUTPUT---> EXPLICIT 
+console.log(fav); // OUTPUT ---> EXPLICIT
 
 /*Why "EXPLICIT" here?
-When you use filter(), it returns the actual filtered array that you can see. 
+yWhen you use filter(), it returns the actual filtered array that you can see.
 
 // IMPLICIT (hidden/unclear)
 myBooks.forEach((book) => {
@@ -80,4 +80,26 @@ console.log(fav);  // ✅ Shows the actual filtered array
  const newArr= array.map((num) => num+10)
  console.log(newArr);
 
- // chaining-------
+// chaining-------
+// using two-three methods in one chain
+const num = [1, 2, 3, 4, 5, 6, 7, 8];
+const newNum = num
+  .filter((n) => n % 2 === 0)
+  .map((n) => n * 100);
+
+console.log("Even numbers multiplied by 100:", newNum);
+
+const filteredAndMappedBooks = myBooks
+  .filter((book) => book.genre === "non_fiction")
+  .map((book) => book.bookName);
+
+console.log("Non-fiction book names:", filteredAndMappedBooks);
+
+// Ruduce methods
+// mostly used in shopping cart
+// Syntax---------- 
+/*  array.reduce(function( accumulator, current value, index)
+{
+// return updated accumulator
+}, initial value );
+*/
